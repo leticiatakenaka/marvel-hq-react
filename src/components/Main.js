@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Card from "./Card";
-import { client } from "../service/api";
+import api from "../service/api";
 import { useEffect } from "react";
 
 const MainStyle = styled.div`
@@ -20,6 +20,16 @@ const MainStyle = styled.div`
 `;
 
 function Main() {
+  useEffect(() => {
+    api
+      .get(
+        "/v1/public/stories?ts=1&apikey=8fed82c36a49172b887ffe0bc9cf8478&hash=11f5fb667b1fa98d74ae4798ee82031e"
+      )
+      .then((response) => console.log(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
   return (
     <MainStyle>
       <Card />
