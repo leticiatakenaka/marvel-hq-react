@@ -4,8 +4,8 @@ import api from "../service/api";
 
 const CardStyle = styled.div`
   background: #efefef;
-  height: 15em;
-  width: 11em;
+  height: 16em;
+  width: 12em;
 
   @media screen and (max-width: 1023px) {
   }

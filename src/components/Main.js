@@ -9,7 +9,7 @@ const MainStyle = styled.div`
   @media screen and (max-width: 1023px) {
     margin-top: 2em;
     justify-content: center;
-    grid-template-columns: 11em 11em;
+    grid-template-columns: 12em 12em;
   }
 
   @media screen and (min-width: 1024px) {
