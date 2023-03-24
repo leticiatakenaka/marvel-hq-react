@@ -3,17 +3,10 @@ import styled from "styled-components";
 import api from "../service/api";
 
 const CardStyle = styled.div`
-  background: #efefef;
   height: 16em;
   width: 12em;
 
   @media screen and (max-width: 1023px) {
-  }
-`;
-const CardTextStyle = styled.div`
-  @media screen and (max-width: 1023px) {
-    display: flex;
-    justify-content: space-between;
   }
 `;
 
@@ -37,10 +30,14 @@ function Cards() {
     <>
       {comicsList.map((comic) => (
         <div key={comic.id} className="item">
-          <CardStyle />
-          <CardTextStyle>
-            <h5>{comic.title}</h5>
-          </CardTextStyle>
+          <CardStyle>
+            <img
+              src={comic.thumbnail.path + "/portrait_fantastic.jpg"}
+              alt=""
+            />
+          </CardStyle>
+          <h5>{comic.title}</h5>
+          <h5>${comic.prices[0].price}</h5>
         </div>
       ))}
     </>
