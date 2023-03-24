@@ -1,15 +1,7 @@
-import Nav from "./components/Nav";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import Routes from "./routes";
 
 function App() {
-  return (
-    <div className="body">
-      <Nav />
-      <Header />
-      <Main />
-    </div>
-  );
+  return <Routes />;
 }
 
 export default App;

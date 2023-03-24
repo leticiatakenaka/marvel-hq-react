@@ -28,23 +28,10 @@ function Button(props) {
     white-space: nowrap;
     word-wrap: break-word;
 
-    &: hover {
+    &:hover {
       background-color: #f3f4f6;
       text-decoration: none;
       transition-duration: 0.1s;
-    }
-
-    &:disabled {
-      background-color: #fafbfc;
-      border-color: rgba(27, 31, 35, 0.15);
-      color: #959da5;
-      cursor: default;
-    }
-
-    &:active {
-      background-color: #edeff2;
-      box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
-      transition: none 0s;
     }
 
     &:focus {

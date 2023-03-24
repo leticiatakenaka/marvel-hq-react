@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Cards from "./Cards";
 import Button from "./Button";
+import { useState } from "react";
+import ActiveButton from "./ActiveButton";
 
 const CardsStyle = styled.div`
   display: grid;
@@ -37,6 +39,8 @@ const PaginationStyle = styled.div`
 `;
 
 function Main() {
+  const [page, setPage] = useState(1);
+
   return (
     <MainStyle>
       <h3>HQ'S MARVEL</h3>
@@ -44,12 +48,11 @@ function Main() {
         <Cards />
       </CardsStyle>
       <PaginationStyle>
-        <Button item={"anterior"} />
-        <Button item={"1"} />
-        <Button item={"2"} />
-        <Button item={"3"} />
-        <Button item={"4"} />
-        <Button item={"5"} />
+        <ActiveButton item={page} />
+        <Button item={page + 1} />
+        <Button item={page + 2} />
+        <Button item={page + 3} />
+        <Button item={page + 4} />
         <Button item={"próximo"} />
       </PaginationStyle>
     </MainStyle>
