@@ -12,31 +12,31 @@ const CardsStyle = styled.div`
 
   @media screen and (min-width: 1024px) {
     gap: 20px;
-    margin-left: 20em;
-    margin-right: 20em;
     margin-top: 4em;
     grid-template-columns: 200px 200px 200px 200px 200px;
   }
 `;
 
-const Title = styled.h3`
+const MainStyle = styled.h3`
   @media screen and (min-width: 1024px) {
     margin-left: 17em;
     margin-top: 2em;
   }
   @media screen and (max-width: 1023px) {
     margin-left: 2em;
+    margin-right: 20em;
+    margin-left: 20em;
   }
 `;
-
 function Main() {
   return (
-    <>
-      <Title>HQ'S MARVEL</Title>
+    <MainStyle>
+      <h3>HQ'S MARVEL</h3>
       <CardsStyle>
         <Cards />
       </CardsStyle>
-    </>
+      <button>EXIBIR MAIS</button>
+    </MainStyle>
   );
 }
 
