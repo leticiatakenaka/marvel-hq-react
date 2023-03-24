@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Cards from "./Cards";
+import Button from "./Button";
 
 const CardsStyle = styled.div`
   display: grid;
@@ -21,13 +22,20 @@ const MainStyle = styled.h3`
   @media screen and (min-width: 1024px) {
     margin-left: 17em;
     margin-top: 2em;
+    margin-right: 17em;
   }
   @media screen and (max-width: 1023px) {
     margin-left: 2em;
-    margin-right: 20em;
-    margin-left: 20em;
   }
 `;
+
+const PaginationStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+`;
+
 function Main() {
   return (
     <MainStyle>
@@ -35,7 +43,15 @@ function Main() {
       <CardsStyle>
         <Cards />
       </CardsStyle>
-      <button>EXIBIR MAIS</button>
+      <PaginationStyle>
+        <Button item={"anterior"} />
+        <Button item={"1"} />
+        <Button item={"2"} />
+        <Button item={"3"} />
+        <Button item={"4"} />
+        <Button item={"5"} />
+        <Button item={"próximo"} />
+      </PaginationStyle>
     </MainStyle>
   );
 }

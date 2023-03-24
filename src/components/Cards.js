@@ -5,9 +5,6 @@ import api from "../service/api";
 const CardStyle = styled.div`
   height: 16em;
   width: 12em;
-
-  @media screen and (max-width: 1023px) {
-  }
 `;
 
 function Cards() {
@@ -16,7 +13,7 @@ function Cards() {
   useEffect(() => {
     api
       .get(
-        "/v1/public/comics?ts=1&apikey=8fed82c36a49172b887ffe0bc9cf8478&hash=11f5fb667b1fa98d74ae4798ee82031e&limit=12"
+        "/v1/public/comics?ts=1&apikey=8fed82c36a49172b887ffe0bc9cf8478&hash=11f5fb667b1fa98d74ae4798ee82031e&limit=15"
       )
       .then((response) => {
         setComicsList([...response.data.data.results]);
@@ -33,7 +30,7 @@ function Cards() {
           <CardStyle>
             <img
               src={comic.thumbnail.path + "/portrait_fantastic.jpg"}
-              alt=""
+              alt="comic thumbnail"
             />
           </CardStyle>
           <h5>{comic.title}</h5>
