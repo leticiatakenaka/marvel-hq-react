@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import styled from "styled-components";
 import api from "../../service/api";
@@ -36,10 +36,14 @@ const Price = styled(Title)`
   font-weight: bold;
 `;
 
+const LinkStyle = styled(Link)`
+  text-decoration: none;
+  color: #504a4a;
+`;
+
 function Cards() {
   const [comicsList, setComicsList] = useState([]);
   const { page } = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     let url;
@@ -62,15 +66,11 @@ function Cards() {
       });
   }, []);
 
-  const handleIndividualHQ = (id) => {
-    navigate(`/marvel-comics/${id}`);
-  };
-
   return (
     <>
       {comicsList.map((comic) => (
         <CardStyle key={comic.id}>
-          <Link to={"/marvel-comics/" + comic.id}>
+          <LinkStyle to={"/marvel-comics/" + comic.id}>
             <ImgStyle>
               <img
                 src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`}
@@ -82,7 +82,7 @@ function Cards() {
               {"$ "}
               {comic.prices[0].price}
             </Price>
-          </Link>
+          </LinkStyle>
         </CardStyle>
       ))}
     </>
