@@ -1,5 +1,5 @@
 import { Route, Routes as Router, BrowserRouter } from "react-router-dom";
-import Main from "./components/Main";
+import Main from "./components/list-comics/Main";
 
 const Routes = () => {
   return (

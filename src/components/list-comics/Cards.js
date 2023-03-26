@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import styled from "styled-components";
-import api from "../service/api";
-import { HASH, PUBLIC_KEY } from "../service/env";
+import api from "../../service/api";
+import { HASH, PUBLIC_KEY } from "../../service/env";
 
 const ImgStyle = styled.div`
   height: 16em;
