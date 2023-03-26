@@ -12,6 +12,7 @@ const CardsStyle = styled.div`
   justify-content: start;
 
   @media screen and (max-width: 1023px) {
+    gap: 20px;
     margin-top: 2em;
     justify-content: center;
     grid-template-columns: 12em 12em;
@@ -45,7 +46,7 @@ const PaginationStyle = styled.div`
 
 function Main() {
   const { page } = useParams();
-  const navigate = useNavigate();
+
   const [pageNumber, setpageNumber] = useState(page ? parseInt(page) : 1);
 
   return (
