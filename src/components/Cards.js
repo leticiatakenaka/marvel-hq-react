@@ -10,6 +10,10 @@ const CardStyle = styled.div`
   width: 12em;
 `;
 
+const Title = styled.h5`
+  width: 10em;
+`;
+
 function Cards() {
   const [comicsList, setComicsList] = useState([]);
   const { page } = useParams();
@@ -46,7 +50,7 @@ function Cards() {
               alt="comic thumbnail"
             />
           </CardStyle>
-          <h5>{comic.title}</h5>
+          <Title>{comic.title}</Title>
           <h5>${comic.prices[0].price}</h5>
         </div>
       ))}
