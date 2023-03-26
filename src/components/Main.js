@@ -8,18 +8,17 @@ import ActiveButton from "./ActiveButton";
 
 const CardsStyle = styled.div`
   display: grid;
-  min-height: 40em;
+  min-height: 45em;
   justify-content: start;
+  gap: 25px;
 
   @media screen and (max-width: 1023px) {
-    gap: 20px;
     margin-top: 2em;
     justify-content: center;
     grid-template-columns: 12em 12em;
   }
 
   @media screen and (min-width: 1024px) {
-    gap: 20px;
     margin-top: 4em;
     grid-template-columns: 200px 200px 200px 200px 200px 200px;
   }
@@ -40,7 +39,7 @@ const PaginationStyle = styled.div`
   display: flex;
   justify-content: start;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 20px;
 `;
 

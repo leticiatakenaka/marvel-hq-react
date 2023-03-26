@@ -11,6 +11,7 @@ const ImgStyle = styled.div`
 
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 `;
 
 const CardStyle = styled.div`
@@ -24,10 +25,15 @@ const CardStyle = styled.div`
   }
 `;
 
-const Title = styled.h5`
+const Title = styled.h4`
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
+`;
+
+const Price = styled(Title)`
+  color: #f78f3f;
+  font-weight: bold;
 `;
 
 function Cards() {
@@ -66,7 +72,7 @@ function Cards() {
             />
           </ImgStyle>
           <Title>{comic.title}</Title>
-          <Title>${comic.prices[0].price}</Title>
+          <Price>${comic.prices[0].price}</Price>
         </CardStyle>
       ))}
     </>
