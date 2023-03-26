@@ -54,7 +54,7 @@ const Crumb = styled.li`
   }
 
   a {
-    color: ##e23636;
+    color: #e23636;
     text-decoration: none;
     &:hover,
     &:active {
