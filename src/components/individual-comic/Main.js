@@ -10,11 +10,11 @@ import { HASH, PUBLIC_KEY } from "../../service/env";
 
 const Section = styled.div`
   margin-top: 3em;
-  display: flex;
   text-align: start;
   gap: 2em;
 
   @media screen and (max-width: 1023px) {
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 4.5em;
@@ -22,7 +22,9 @@ const Section = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    justify-content: center;
     min-width: 45em;
   }
 `;
