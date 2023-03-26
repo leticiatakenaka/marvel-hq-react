@@ -94,10 +94,17 @@ export function Main() {
       <Section>
         {comic ? (
           <>
-            <img
-              src={`${comic.images[0].path}/portrait_uncanny.${comic.images[0].extension}`}
-              alt="images_comics"
-            ></img>
+            {Object.keys(comic.images) > 1 ? (
+              <img
+                src={`${comic.images[0].path}/portrait_uncanny.${comic.images[0].extension}`}
+                alt="images_comics"
+              ></img>
+            ) : (
+              <img
+                src={`${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`}
+                alt="images_comics"
+              ></img>
+            )}
             <div className="details">
               <h2>{comic.title}</h2>
               <Price>
