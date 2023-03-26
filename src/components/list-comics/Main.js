@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
+import { MainStyle } from "../MainStyle";
 import Cards from "./Cards";
 import Button from "./Button";
 import ActiveButton from "./ActiveButton";
@@ -21,17 +22,6 @@ const CardsStyle = styled.div`
   @media screen and (min-width: 1024px) {
     margin-top: 4em;
     grid-template-columns: 200px 200px 200px 200px 200px 200px;
-  }
-`;
-
-const MainStyle = styled.div`
-  @media screen and (min-width: 1024px) {
-    margin-left: 17em;
-    margin-top: 2em;
-    margin-right: 17em;
-  }
-  @media screen and (max-width: 1023px) {
-    margin-left: 2em;
   }
 `;
 

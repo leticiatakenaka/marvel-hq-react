@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-import { useParams, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const ButtonStyle = styled.button`
   appearance: none;
-  background-color: #fafbfc;
+  background-color: #f78f3f;
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
@@ -28,12 +29,7 @@ const ButtonStyle = styled.button`
   vertical-align: middle;
   white-space: nowrap;
   word-wrap: break-word;
-
-  &:hover {
-    background-color: #f3f4f6;
-    text-decoration: none;
-    transition-duration: 0.1s;
-  }
+  color: white;
 
   &:focus {
     outline: 1px transparent;
@@ -48,39 +44,13 @@ const ButtonStyle = styled.button`
   }
 `;
 
-function Button(props) {
-  const { page } = useParams();
-  const navigate = useNavigate();
-
-  const handleNext = (pg) => {
-    let increasePage = parseInt(pg) + 1;
-    navigate(`/page/${increasePage}`);
-    //reload
-    navigate(0);
-  };
-
-  const handleBack = (pg) => {
-    let decreasePage = parseInt(pg) - 1;
-    navigate(`/page/${decreasePage}`);
-    //reload
-    navigate(0);
-  };
-
-  const handleClick = (pg) => {
-    if (props.action === "next") {
-      handleNext(pg || 1);
-    } else if (props.action === "back") {
-      handleBack(pg);
-    } else {
-      navigate(`/page/${props.item}`);
-      //reload
-      navigate(0);
-    }
-  };
-
+function CartButton() {
   return (
-    <ButtonStyle onClick={() => handleClick(page)}>{props.item}</ButtonStyle>
+    <ButtonStyle>
+      <FontAwesomeIcon style={{ marginRight: "8px" }} icon={faCartShopping} />
+      Adicionar
+    </ButtonStyle>
   );
 }
 
-export default Button;
+export default CartButton;

@@ -67,12 +67,15 @@ function Cards() {
         <CardStyle key={comic.id}>
           <ImgStyle>
             <img
-              src={comic.thumbnail.path + "/portrait_fantastic.jpg"}
+              src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`}
               alt="comic thumbnail"
             />
           </ImgStyle>
           <Title>{comic.title}</Title>
-          <Price>${comic.prices[0].price}</Price>
+          <Price>
+            {"$ "}
+            {comic.prices[0].price}
+          </Price>
         </CardStyle>
       ))}
     </>
