@@ -64,7 +64,7 @@ function Cards() {
   return (
     <>
       {comicsList.map((comic) => (
-        <CardStyle key={comic.id}>
+        <CardStyle onClick={() => console.log(comic.id)} key={comic.id}>
           <ImgStyle>
             <img
               src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`}

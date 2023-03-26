@@ -36,24 +36,30 @@ const Description = styled.p`
   max-width: 60vh;
 `;
 
-const BreadCrumbs = styled.ul`
-  padding: 10px 16px;
+const Breadcrumbs = styled.ul`
   list-style: none;
-  background-color: #eee;
+  padding: 0;
+  & > li:after {
+    content: "${(props) => props.separator || "/"}";
+    padding: 0 8px;
+  }
+`;
 
-  li {
-    display: inline;
-    font-size: 18px;
+const Crumb = styled.li`
+  display: inline-block;
+
+  &:last-of-type:after {
+    content: "";
+    padding: 0;
   }
 
-  li a {
-    color: #0275d8;
+  a {
+    color: ##e23636;
     text-decoration: none;
-  }
-
-  li a:hover {
-    color: #01447e;
-    text-decoration: underline;
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -78,12 +84,12 @@ export function Main() {
 
   return (
     <MainStyle style={{ minHeight: "58em" }}>
-      <BreadCrumbs>
-        <li>
+      <Breadcrumbs>
+        <Crumb>
           <Link to="/"> MARVEL COMICS</Link>
-        </li>
-        <li>{comic.title}</li>
-      </BreadCrumbs>
+        </Crumb>
+        <Crumb>{comic.title}</Crumb>
+      </Breadcrumbs>
 
       <Section>
         {comic ? (
