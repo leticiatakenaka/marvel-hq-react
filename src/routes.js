@@ -5,7 +5,8 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Router>
-        <Route element={<Body />} path="/:page?" />
+        <Route element={<Body />} path="/" />
+        <Route element={<Body />} path="/page/:page" />
       </Router>
     </BrowserRouter>
   );
