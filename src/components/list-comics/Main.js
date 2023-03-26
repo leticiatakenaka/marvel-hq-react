@@ -43,7 +43,7 @@ const PaginationStyle = styled.div`
   margin-bottom: 20px;
 `;
 
-function Main() {
+export function Main() {
   const { page } = useParams();
 
   const [pageNumber, setpageNumber] = useState(page ? parseInt(page) : 1);
@@ -79,5 +79,3 @@ function Main() {
     </MainStyle>
   );
 }
-
-export default Main;

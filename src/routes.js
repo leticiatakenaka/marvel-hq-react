@@ -1,13 +1,17 @@
 import { Route, Routes as Router, BrowserRouter } from "react-router-dom";
-import Main from "./components/list-comics/Main";
+import { Main as MainListComics } from "./components/list-comics/Main";
+import { Main as MainIndividualComic } from "./components/individual-comic/Main";
 
 const Routes = () => {
   return (
     <BrowserRouter>
       <Router>
-        <Route element={<Main />} path="/" />
-        <Route element={<Main />} path="/page/:page" />
-        {/* <Route element={<Body />} path="/marvel-comics/:comicId" /> */}
+        <Route element={<MainListComics />} path="/" />
+        <Route element={<MainListComics />} path="/page/:page" />
+        <Route
+          element={<MainIndividualComic />}
+          path="/marvel-comics/:comicId"
+        />
       </Router>
     </BrowserRouter>
   );
