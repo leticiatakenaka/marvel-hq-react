@@ -50,7 +50,7 @@ function Main() {
 
   return (
     <MainStyle>
-      <h2>HQ'S MARVEL</h2>
+      <h2>MARVEL COMICS</h2>
       <CardsStyle>
         <Cards />
       </CardsStyle>
