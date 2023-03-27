@@ -7,27 +7,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from "../../service/api";
 import { HASH, PUBLIC_KEY } from "../../service/env";
-
-const Section = styled.div`
-  margin-top: 3em;
-  text-align: start;
-  gap: 2em;
-
-  @media screen and (max-width: 1023px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 4.5em;
-    margin-right: 4.5em;
-  }
-
-  @media screen and (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: 500px 500px;
-    justify-content: center;
-    min-width: 45em;
-  }
-`;
+import { Section } from "../Section";
 
 const Price = styled.h2`
   color: #f78f3f;
@@ -82,7 +62,6 @@ export function Main() {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
-  console.log(comic);
 
   return (
     <MainStyle style={{ minHeight: "58em" }}>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
 
 const ButtonStyle = styled.button`
   appearance: none;
@@ -16,7 +17,7 @@ const ButtonStyle = styled.button`
   display: inline-block;
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 20px;
   list-style: none;
@@ -28,7 +29,7 @@ const ButtonStyle = styled.button`
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
-  word-wrap: break-word;
+  item-wrap: break-item;
   color: white;
 
   &:focus {
@@ -44,12 +45,29 @@ const ButtonStyle = styled.button`
   }
 `;
 
+const HandleAddCart = (id) => {
+  const itemsLS = JSON.parse(localStorage.getItem("cart"));
+  let itemsCart = [];
+
+  if (itemsLS) {
+    itemsCart = itemsLS;
+  }
+
+  itemsCart.push(id);
+
+  localStorage.setItem("cart", JSON.stringify(itemsCart));
+};
+
 function CartButton() {
+  const { comicId } = useParams();
+
   return (
-    <ButtonStyle>
-      <FontAwesomeIcon style={{ marginRight: "8px" }} icon={faCartShopping} />
-      Adicionar
-    </ButtonStyle>
+    <>
+      <ButtonStyle onClick={() => HandleAddCart(comicId)}>
+        <FontAwesomeIcon style={{ marginRight: "8px" }} icon={faCartShopping} />
+        Adicionar
+      </ButtonStyle>
+    </>
   );
 }
 

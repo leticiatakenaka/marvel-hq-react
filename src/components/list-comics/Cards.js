@@ -58,7 +58,6 @@ function Cards() {
     api
       .get(url)
       .then((response) => {
-        console.log(response.data.data.results);
         setComicsList([...response.data.data.results]);
       })
       .catch((err) => {

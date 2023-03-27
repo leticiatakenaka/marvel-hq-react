@@ -14,13 +14,11 @@ const CardsStyle = styled.div`
   gap: 25px;
 
   @media screen and (max-width: 1023px) {
-    margin-top: 2em;
     justify-content: center;
     grid-template-columns: 12em 12em;
   }
 
   @media screen and (min-width: 1024px) {
-    margin-top: 4em;
     grid-template-columns: 200px 200px 200px 200px 200px 200px;
   }
 `;
